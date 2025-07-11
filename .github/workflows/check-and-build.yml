@@ -3,8 +3,8 @@ name: Check for new upstream tag and build
 
 on:
   schedule:
-    # Runs every hour
-    - cron: '0 * * * *'
+    # Runs every day
+    - cron: '0 0 * * *'
   workflow_dispatch:
     inputs:
       tag:
@@ -95,7 +95,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             VERSION=${{ steps.get_tag.outputs.tag }}
-            GO_VERSION=${{ steps.get_go_version.outputs.go_version }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
