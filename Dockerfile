@@ -49,5 +49,4 @@ RUN git config --global --add safe.directory "*"
 
 EXPOSE 8000
 
-# Ensure proper handling of kernel signals
 ENTRYPOINT ["sh", "./docker-entrypoint.sh"]
