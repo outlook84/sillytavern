@@ -1,1 +1,2 @@
-# sillytavern-temp
+# sillytavern
+**For my personal use**
