@@ -17,8 +17,7 @@ RUN npm ci --omit=dev --no-audit --no-fund --loglevel=error --no-progress
 RUN \
   rm -f "config.yaml" || true && \
   ln -s "./config/config.yaml" "config.yaml" || true && \
-  mkdir "config" || true && \
-  sed -i 's/listen: false/listen: true/g' "./config/config.yaml"
+  mkdir "config" || true
 
 # Pre-compile public libraries
 RUN node ./docker/build-lib.js
