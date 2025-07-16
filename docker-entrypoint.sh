@@ -6,6 +6,7 @@ if [ ! -e "config/config.yaml" ]; then
 fi
 
 sed -i 's/listen: false/listen: true/' "./config/config.yaml" || true
+sed -i 's/whitelistMode: true/whitelistMode: false/' "./config/config.yaml" || true
 
 # Execute postinstall to auto-populate config.yaml with missing values
 npm run postinstall

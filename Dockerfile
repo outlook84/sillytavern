@@ -43,6 +43,7 @@ RUN apk add --no-cache git git-lfs \
 
 # Copy build output and dependencies
 COPY --from=builder ${APP_HOME} ${APP_HOME}
+COPY ./docker-entrypoint.sh ./docker-entrypoint.sh
 
 # Fix extension repos permissions
 RUN git config --global --add safe.directory "*"
